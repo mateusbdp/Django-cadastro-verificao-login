@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card border border-0 fundo_card " >
+        <div class="card-body border border-0" >
+          <h5 class="card-title">card numero 01</h5>
+          <p class="card-text">Informação do carde 01</p>
+          <a href="{% url 'login_view' %}" class="btn btn-primary">Login</a>
+          <a href="{% url 'register' %}" class="btn btn-primary">Registro</a>
+ 
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card border border-0 fundo_card " >
+            <div class="card-body border border-0" >
+          <h5 class="card-title">card numero 02</h5>
+          <p class="card-text">Informação do carde 02</p>
+           <!-- Exibe o botão de logout apenas se o usuário estiver autenticado -->
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="btn btn-danger">Sair</a>
+    {% else %}
+        <a href="{% url 'login_view' %}" class="btn btn-primary">Login</a>
+    {% endif %}
+    
+    <h1>Bem-vindo ao site!</h1>
+
+           <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+{% endblock %}

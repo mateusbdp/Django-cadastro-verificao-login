@@ -1,0 +1,65 @@
+<!-- templates/registration/activation_email.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Ativação da Conta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+        .content {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .footer {
+            font-size: 14px;
+            color: #777;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            Olá, {{ user.first_name }}!
+        </div>
+        <div class="content">
+            <p>Obrigado por se registrar em nosso site! Para ativar sua conta, por favor, clique no botão abaixo:</p>
+            <p><a href="http://{{ domain }}/activate/{{ uid }}/{{ token }}" class="button">Ativar minha conta</a></p>
+            <p>Se você não se registrou em nosso site, pode ignorar este e-mail.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; {{ current_year }} MeuSite. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>
